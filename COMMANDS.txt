@@ -1,0 +1,7 @@
+podman build -t rust-http-server .
+podman run -d -p 8080:8080 --name server-http rust-http-server
+
+sudo lsof -i :8080
+sudo kill PID
+
+curl http://0.0.0.0:8080
